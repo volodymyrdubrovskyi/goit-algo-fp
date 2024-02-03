@@ -67,11 +67,15 @@ def create_graph(arr: list):
         graph.right = create_graph(arr_right)
     return graph
 
-# Бінарну купу задаємо как масив
-arr = [0, 4, 1, 5, 10, 3, 2, 15, 12]
+def main():
+    # Бінарну купу задаємо как масив
+    arr = [0, 4, 1, 5, 10, 3, 2, 15, 12]
 
-# Створення дерева
-root = create_graph(arr)
+    # Створення дерева
+    root = create_graph(arr)
 
-# Відображення дерева
-draw_tree(root)
+    # Відображення дерева
+    draw_tree(root)
+
+if __name__ == '__main__':
+    main()
