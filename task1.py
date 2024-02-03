@@ -106,7 +106,7 @@ class LinkedList:
         return sorted_list
     
 
-def combine_llists(llist1: LinkedList, llist2: LinkedList,):
+def combine_llists(llist1: LinkedList, llist2: LinkedList):
     # переходемо на востанній вузол першого списку
     curr_node = llist1.head
     while curr_node.next: 
