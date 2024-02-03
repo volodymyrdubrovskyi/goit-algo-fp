@@ -1,5 +1,3 @@
-import classes
-
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -66,27 +64,25 @@ class LinkedList:
         current_node = self.head
         if current_node.next == None:
             return self
-        s = classes.Stack()
+        temp = None
         while current_node.next:
-            s.push(current_node.data)
-            current_node = current_node.next
-        s.push(current_node.data)
-        r_llist = LinkedList()
-        r_llist.insert_at_beginning(s.pop())
-        while not s.is_empty():
-            curr_data = s.pop()
-            r_llist.insert_at_end(curr_data)
-        return r_llist
+            next_node = current_node.next
+            current_node.next = temp
+            temp = current_node
+            current_node = next_node
+        current_node.next = temp    
+        self.head = current_node
+        return self
 
 def main():
     llist = LinkedList()
 
     # Вставляємо вузли в початок
     llist.insert_at_beginning(5)
-    llist.insert_at_beginning(6)
-    llist.insert_at_beginning(7)
-    llist.insert_at_beginning(10)
-    llist.insert_at_beginning(12)
+    llist.insert_at_beginning(4)
+    llist.insert_at_beginning(3)
+    llist.insert_at_beginning(2)
+    llist.insert_at_beginning(1)
     
     # Друк зв'язного списку
     print("Зв'язний список:")
